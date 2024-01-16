@@ -40,3 +40,5 @@ function findCaliforniaCafes(searchTerm) {
   
   const results = findCaliforniaCafes('Avenue');
   console.log(results);
+
+// I have used map to improve the time complexity to O(N*m), N is the number of places and m is the length of the string-place. Thus, we can also say since m is mostly a small value, the TC is O(N)
