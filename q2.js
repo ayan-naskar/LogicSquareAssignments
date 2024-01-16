@@ -1,5 +1,4 @@
 function findCaliforniaCafes(searchTerm) {
-    // Given arrays
     const cafes = [
       { "name": "Ashley's Cafe", "place_id": "12hydbdf76sljfts87sbfis" },
       { "name": "Avenue Bakery Cafe", "place_id": "jahgde7wgdiau8ewsahgosd" },
@@ -20,10 +19,8 @@ function findCaliforniaCafes(searchTerm) {
       { "id": "urhw3837ehalod7w02b7835", "street_no": "225", "locality": "Macarthur Blvd", "postal_code": "20687", "lat": "35.77813", "long": "119.41791" }
     ];
   
-    // Create a HashMap for efficient lookup
     const placesMap = new Map(places.map(place => [place.id, place]));
   
-    // Merge cafe and place details, remove all kinds of ids
     const mergedData = cafes.map(cafe => {
       const placeDetails = placesMap.get(cafe.place_id);
       if (placeDetails) {
@@ -34,7 +31,6 @@ function findCaliforniaCafes(searchTerm) {
       return cafe;
     });
   
-    // Filter results based on the search term
     const results = mergedData.filter(cafe =>
       cafe.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -42,7 +38,5 @@ function findCaliforniaCafes(searchTerm) {
     return results;
   }
   
-  // Example usage
   const results = findCaliforniaCafes('Avenue');
   console.log(results);
-  
